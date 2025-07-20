@@ -1,0 +1,61 @@
+/* Card con fondo de gradiente */
+.card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none; /* Quitamos el borde por defecto */
+  border-radius: 15px; /* Bordes redondeados */
+  background: linear-gradient(145deg, #6a11cb, #2575fc); /* Gradiente suave */
+  color: white; /* Texto blanco para que resalte */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover para la card */
+.card:hover {
+  transform: translateY(-10px); /* Eleva la card al hacer hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Más sombra para resaltar el hover */
+}
+
+/* Imagen de la card */
+.card-img-top {
+  height: 250px;
+  object-fit: cover; /* Ajusta la imagen para que no se distorsione */
+  border-top-left-radius: 15px; /* Bordes redondeados en la parte superior */
+  border-top-right-radius: 15px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px;
+}
+
+/* Botón dentro de la card */
+.card .btn-info {
+  background-color: #2575fc;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn-info:hover {
+  background-color: #6a11cb;
+}
+
+/* Título de la card */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Descripción dentro de la card */
+.card-text {
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Imagen de la card */
+.card-img-top {
+  height: 200px;  /* Establece una altura fija para la imagen */
+  width: fit-content;    /* Hace que la imagen ocupe todo el ancho de la card */
+  object-fit: cover;  /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+  border-top-left-radius: 15px; /* Bordes redondeados en la parte superior */
+  border-top-right-radius: 15px;
+}

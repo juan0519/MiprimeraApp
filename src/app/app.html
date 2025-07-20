@@ -5,34 +5,26 @@
     </button>
   </h5>
   <div class="card-body">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Raza</th>
-          <th scope="col">Genero</th>
-          <th scope="col">Ki</th>
-          <th scope="col">Max Ki</th>
-          <th scope="col">Afiliación</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let character of characters; let i = index" (click)="onSelectCharacter(character)">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ character.name }}</td>
-          <td>{{ character.race }}</td>
-          <td>{{ character.gender }}</td>
-          <td>{{ character.ki }}</td>
-          <td>{{ character.maxKi }}</td>
-          <td>
-            <img [src]="character.image" alt="{{character.name}}" style="width: 100px; height: 100px;">
-          </td>
-          <td><button class="btn btn-info btn-sm">Ver detalle</button></td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Grid de Cards -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let character of characters">
+        <!-- Card individual para cada personaje -->
+        <div class="card h-100">
+<div style="display: flex; justify-content: center; align-items: center; height: 250px;">
+  <img [src]="character.image" class="card-img-top" alt="{{ character.name }}" style="height: 100%; object-fit: cover;">
+</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ character.name }}</h5>
+            <p class="card-text">
+              <strong>Raza:</strong> {{ character.race }}<br>
+              <strong>Género:</strong> {{ character.gender }}<br>
+              <strong>Afiliación:</strong> {{ character.affiliation }}
+            </p>
+            <button class="btn btn-info" (click)="onSelectCharacter(character)">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
